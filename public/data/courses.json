@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Kompyuter Savodxonligi",
+    "description": "Kompyuterdan foydalana olish, Microsoft Office, internetdan unumli foydalanish bo‘yicha asosiy bilimlar.",
+    "duration": "2 oy",
+    "level": "Boshlang‘ich",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/19/desktop-computer.png"
+  },
+  {
+    "id": 2,
+    "title": "3D Modelling",
+    "description": "Blender yoki boshqa 3D dasturlardan foydalangan holda model yaratish, chizish, animatsiya qilish.",
+    "duration": "4 oy",
+    "level": "Boshlang‘ich – O‘rta",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/3d.png"
+  },
+  {
+    "id": 3,
+    "title": "Grafik Dizayn",
+    "description": "Photoshop, Illustrator, CorelDRAW orqali logotip, banner, vizitka va boshqa grafik ishlanmalar yaratish.",
+    "duration": "3 oy",
+    "level": "Boshlang‘ich – O‘rta",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/GrafikDizayn_yzC8tbZ.svg"
+  },
+  {
+    "id": 4,
+    "title": "IT uchun Ingliz Tili",
+    "description": "IT sohasida ishlash uchun texnik ingliz tilidagi terminlar, o‘qish, tinglash va yozish ko‘nikmalarini rivojlantirish.",
+    "duration": "2 oy",
+    "level": "Boshlang‘ich",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/GrafikDizayn_yzC8tbZ.svg"
+  },
+  {
+    "id": 5,
+    "title": "Frontend",
+    "description": "HTML, CSS, JavaScript, React bilan web UI yaratish. Responsive dizayn, API bilan bog‘lanish.",
+    "duration": "6 oy",
+    "level": "Boshlang‘ich – O‘rta",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/AdvencedFrontend.svg"
+  },
+  {
+    "id": 6,
+    "title": "SMM Kursi",
+    "description": "Ijtimoiy tarmoqlarda marketing, kontent yaratish, analytics, reklamalar bilan ishlash.",
+    "duration": "2 oy",
+    "level": "Boshlang‘ich",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/SMM_kurs.svg"
+  },
+  {
+    "id": 7,
+    "title": "Robototexnika",
+    "description": "Arduino yoki LEGO orqali robot yig‘ish, dasturlash, sensorlar bilan ishlash.",
+    "duration": "4 oy",
+    "level": "Bolalar – Boshlang‘ich",
+    "image": "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/23/Frame.png"
+  },
+  {
+    "id": 8,
+    "title": "Mobile Developer",
+    "description": "Flutter orqali iOS va Android ilovalar yaratish.",
+    "duration": "6 oy",
+    "level": "Boshlang‘ich – O‘rta",
+    "image": "/mnt/data/2c917039-3697-48ae-8edf-9ea83c7b021f.png"
+  },
+  {
+    "id": 9,
+    "title": "Foundation (Python)",
+    "description": "Python asoslari, algoritmlar, backendga tayyorlov bosqichi.",
+    "duration": "3 oy",
+    "level": "Boshlang‘ich",
+    "image": "/mnt/data/2c917039-3697-48ae-8edf-9ea83c7b021f.png"
+  },
+  {
+    "id": 10,
+    "title": "Backend",
+    "description": "Python Django yoki Node.js orqali web serverlar, API lar yaratish, ma’lumotlar bazasi bilan ishlash.",
+    "duration": "6 oy",
+    "level": "O‘rta",
+    "image": "/mnt/data/2c917039-3697-48ae-8edf-9ea83c7b021f.png"
+  }
+]
