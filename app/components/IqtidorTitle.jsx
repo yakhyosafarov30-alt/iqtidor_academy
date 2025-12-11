@@ -4,34 +4,31 @@ import { motion } from "framer-motion";
 
 export default function IqtidorTitle() {
   return (
-    <div className="w-full flex flex-col md:flex-row items-start justify-between gap-10 py-10 px-4 md:px-10 bg-gray-900 text-white">
-      {/* Chap tomon */}
+    <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-10 py-10 px-4 md:px-12 bg-gray-900 text-white">
+      {/* Chap qism — Title'lar */}
       <motion.div
-        className="space-y-6 flex-1"
+        className="space-y-5 flex-1 w-full"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
       >
-        {/* Title 1 */}
-        <h1 className="typing text-3xl md:text-4xl font-bold leading-snug">
+        <h1 className="typing text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
           Bugungi <span className="text-blue-400">kun o‘rganuvchilari</span>
         </h1>
 
-        {/* Title 2 */}
-        <h1 className="typing delay1 text-3xl md:text-4xl font-bold leading-snug">
+        <h1 className="typing delay1 text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
           Ertangi <span className="text-blue-400">kun egalari</span>
         </h1>
 
-        {/* Title 3 */}
-        <h1 className="typing delay2 text-3xl md:text-4xl font-bold leading-snug">
+        <h1 className="typing delay2 text-2xl sm:text-3xl md:text-4xl font-bold leading-snug">
           Iqtidor{" "}
           <span className="text-blue-400">bilan kelajakka qadam bosing</span>
         </h1>
       </motion.div>
 
-      {/* O‘ng tomon */}
+      {/* O‘ng qism — Text */}
       <motion.div
-        className="max-w-xl text-base md:text-lg text-gray-300 leading-7 md:leading-8 flex-1"
+        className="max-w-xl text-sm sm:text-base md:text-lg text-gray-300 leading-7 md:leading-8 flex-1"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7, delay: 1.6 }}
@@ -44,13 +41,14 @@ export default function IqtidorTitle() {
         </p>
       </motion.div>
 
-      {/* Typing animation CSS */}
+      {/* Typing Animation CSS */}
       <style jsx>{`
         .typing {
           overflow: hidden;
           white-space: nowrap;
           border-right: 2px solid #60a5fa;
           width: 0;
+          max-width: 100%;
           animation: typing 1.6s steps(40, end) forwards,
             cursorBlink 0.7s infinite;
         }

@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Phone, Grid2x2, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-// import akademiya from "../akademiya-haqida/page";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,7 +19,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* NAVBAR */}
       <nav
         className={`
           fixed top-0 left-0 w-full z-50 transition-all duration-500
@@ -35,14 +33,16 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between text-white">
           {/* LEFT */}
           <div className="flex items-center gap-4">
+            {/* HAMBURGER — xl dan kichik ekranlarda chiqadi */}
             <button
-              className="md:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
+              className="xl:hidden p-2 rounded-lg bg-white/10 hover:bg-white/20 transition"
               onClick={() => setOpenMenu(true)}
             >
               <Menu size={24} />
             </button>
 
-            <div className="hidden md:flex items-center gap-3 text-lg font-medium">
+            {/* LEFT MENU — faqat xl+ ekranlarda ko‘rinadi */}
+            <div className="hidden xl:flex items-center gap-3 text-lg font-medium">
               <Link href="/Courses" className="flex items-center gap-3">
                 <Grid2x2 size={24} />
                 <span>Kurslarimiz</span>
@@ -51,9 +51,8 @@ export default function Navbar() {
           </div>
 
           {/* CENTER LOGO */}
-
           <div className="absolute left-1/2 -translate-x-1/2 transition-all duration-500">
-            <Link href='/'>
+            <Link href="/">
               <Image
                 src="/assets/iqtidor_logo1.jpg"
                 alt="logo"
@@ -64,16 +63,11 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* RIGHT */}
-          <div className="hidden md:flex items-center gap-5">
+          {/* RIGHT — faqat xl ekranlarda ko‘rinadi */}
+          <div className="hidden xl:flex items-center gap-5">
             <Link
               href="/akademiya-haqida"
-              className="
-                px-4 py-2 rounded-lg
-                text-white/90 font-medium
-                hover:text-white hover:bg-white/10
-                transition-all duration-300
-              "
+              className="px-4 py-2 rounded-lg text-white/90 font-medium hover:text-white hover:bg-white/10 transition-all duration-300"
             >
               Akademiya haqida
             </Link>
@@ -120,7 +114,7 @@ export default function Navbar() {
           </Link>
 
           <Link
-            href="/akademiya"
+            href="/akademiya-haqida"
             className="hover:text-blue-400 transition"
             onClick={() => setOpenMenu(false)}
           >
