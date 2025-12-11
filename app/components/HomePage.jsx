@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -10,8 +10,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function HomePage() {
   const name = "mehmon";
 
-  const leftTextRef = useRef(null); // “Bu mo‘jiza emas,”
-  const rightTextRef = useRef(null); // “bu IQTIDOR”
+  const leftTextRef = useRef(null);
+  const rightTextRef = useRef(null);
   const subtitleRef = useRef(null);
   const buttonsRef = useRef([]);
   const rocketRef = useRef(null);
@@ -25,13 +25,15 @@ export default function HomePage() {
     alert("Sertifikat holatini tekshirish funksiyasi ishlamoqda!");
   };
 
-  useEffect(() => {
-    // Chap matn chapga siljish
+  useLayoutEffect(() => {
+    if (!rocketRef.current) return;
+
+    // Chap matn siljishi
     gsap.fromTo(
       leftTextRef.current,
       { x: 0 },
       {
-        x: -210, // chapga siljishi
+        x: -210,
         duration: 1.2,
         ease: "power2.out",
         scrollTrigger: {
@@ -42,12 +44,12 @@ export default function HomePage() {
       }
     );
 
-    // O‘ng matn o‘ngga siljish
+    // O‘ng matn siljishi
     gsap.fromTo(
       rightTextRef.current,
       { x: 0 },
       {
-        x: 127, // o‘ngga siljishi
+        x: 127,
         duration: 1.2,
         ease: "power2.out",
         scrollTrigger: {
@@ -58,7 +60,7 @@ export default function HomePage() {
       }
     );
 
-    // Subtitle va buttons scroll animatsiyasi
+    // Subtitle + buttons
     const elems = [subtitleRef.current, ...buttonsRef.current];
     gsap.fromTo(
       elems,
@@ -77,7 +79,7 @@ export default function HomePage() {
       }
     );
 
-    // Rocket fade in va bounce
+    // Raketa kirib kelishi
     gsap.fromTo(
       rocketRef.current,
       { y: 100, opacity: 0 },
@@ -94,23 +96,23 @@ export default function HomePage() {
       }
     );
 
-    // RAKETA FLYING + ROTATION ANIMATSIYA
-    // RAKETA KIRIB-CHIQQAN ANIMATSIYA (3D PUSH EFFECT)
+    // RAKETA FLY ANIMATSIYA (to‘g‘rilangan)
     const rocketFly = gsap.to(rocketRef.current, {
       x: 0,
       y: 0,
-      scale: 1.08, // KATTA-KICHIK BO‘LISH
+      scale: 1.08,
       duration: 1.6,
       repeat: -1,
       yoyo: true,
       ease: "power2.inOut",
-      rotation: 3, // YENGIL BURILISH
+      rotation: 3,
       transformOrigin: "center center",
       onUpdate: () => {
+        if (!rocketRef.current?._gsap) return;
         const rocketScale = rocketRef.current._gsap.scale;
 
-        // Yon chiziqlar raketa kattalashishi bilan moslashadi
-        linesRef.current.forEach((line, idx) => {
+        // Yon chiziqlar raketaga mos animatsiya
+        linesRef.current.forEach((line) => {
           if (!line) return;
           gsap.set(line, {
             scaleY: rocketScale * 1.3,
@@ -120,6 +122,7 @@ export default function HomePage() {
       },
     });
 
+    // Hover animatsiya
     const rocketEl = rocketRef.current;
     const hoverAnim = gsap.to(rocketEl, {
       y: -20,
@@ -127,11 +130,13 @@ export default function HomePage() {
       paused: true,
       ease: "power1.out",
     });
+
     rocketEl.addEventListener("mouseenter", () => hoverAnim.play());
     rocketEl.addEventListener("mouseleave", () => hoverAnim.reverse());
 
-    // Initial lines animation
+    // Yon chiziqlar animatsiyasi
     linesRef.current.forEach((line, idx) => {
+      if (!line) return;
       gsap.fromTo(
         line,
         { scaleY: 0, opacity: 0 },
@@ -156,10 +161,7 @@ export default function HomePage() {
             Bu <span className="text-[#3a9dfb]">mo‘jiza</span> emas,
           </span>
           <br />
-          <span
-            ref={rightTextRef}
-            className=" text-[#3a9dfb]  inline-block mt-3"
-          >
+          <span ref={rightTextRef} className="text-[#3a9dfb] inline-block mt-3">
             bu{" "}
             <span className="bg-[#3a9dfb] px-8 py-3 rounded-xl text-white">
               IQTIDOR
@@ -168,9 +170,9 @@ export default function HomePage() {
         </h1>
       </div>
 
-      {/* grid */}
+      {/* Grid */}
       <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        {/* Left side: Subtitle + Buttons */}
+        {/* Left Side */}
         <div className="flex flex-col items-center md:items-start">
           <p
             ref={subtitleRef}
@@ -199,7 +201,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Right side: Rocket + Side Lines */}
+        {/* Right Side */}
         <div className="relative flex justify-center md:justify-end mt-12 md:mt-0">
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2 flex flex-col justify-center items-start z-0">
             {[...Array(5)].map((_, idx) => (
@@ -226,8 +228,6 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-
-      {/* Rocket below */}
     </section>
   );
 }

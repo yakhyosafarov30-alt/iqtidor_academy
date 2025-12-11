@@ -34,11 +34,15 @@ export default function Navbar() {
         <div className="flex items-center gap-10">
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer">
-            <img src="/logo.png" alt="logo" className="h-10" />
-            <div className="leading-5">
+            <img
+              src="	https://iqtidoracademy.uz/images/logo-iq.svg"
+              alt="logo"
+              className="h-10"
+            />
+            {/* <div className="leading-5">
               <p className="text-xl font-bold">IQTIDOR</p>
               <p className="text-sm text-gray-600">Academy</p>
-            </div>
+            </div> */}
           </div>
 
           {/* Kurslarimiz button (hidden on mobile) */}
