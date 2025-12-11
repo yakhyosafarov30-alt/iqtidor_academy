@@ -68,7 +68,7 @@ export default function Courses() {
                   "
                 >
                   <Image
-                    src={course.image}
+                    src={course.image?.trim()}
                     alt={course.title}
                     width={50}
                     height={50}

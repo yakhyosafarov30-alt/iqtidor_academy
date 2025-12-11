@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -72,30 +72,6 @@ const mentors = [
 ];
 
 export default function Mentor3DParallax() {
-  const cardRefs = useRef({});
-
-  const handleMouseMove = (e, card) => {
-    if (!card) return;
-
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - (rect.left + rect.width / 2);
-    const y = e.clientY - (rect.top + rect.height / 2);
-
-    card.style.transform = `
-      perspective(600px)
-      rotateY(${x / 30}deg)
-      rotateX(${-y / 30}deg)
-      scale(1.03)
-    `;
-  };
-
-  const handleMouseLeave = (card) => {
-    if (!card) return;
-    card.style.transform = "perspective(600px) rotateY(0) rotateX(0) scale(1)";
-    card.style.transition = "transform 0.3s ease";
-    setTimeout(() => (card.style.transition = ""), 300);
-  };
-
   return (
     <div className="w-full bg-[#0a0f1a] py-16 px-4 md:px-6">
       <h1 className="text-white text-4xl font-bold mb-10 text-center">
@@ -107,7 +83,6 @@ export default function Mentor3DParallax() {
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,
-          pauseOnMouseEnter: true,
         }}
         speed={600}
         loop={true}
@@ -122,23 +97,16 @@ export default function Mentor3DParallax() {
       >
         {mentors.map((m) => (
           <SwiperSlide key={m.id}>
-            <div
-              ref={(el) => (cardRefs.current[m.id] = el)}
-              className="bg-[#111827] rounded-xl p-3 cursor-pointer shadow-lg transition-all"
-              onMouseMove={(e) => handleMouseMove(e, cardRefs.current[m.id])}
-              onMouseLeave={() => handleMouseLeave(cardRefs.current[m.id])}
-              style={{
-                transformStyle: "preserve-3d",
-                transition: "transform .2s ease",
-              }}
-            >
-              <Image
-                src={m.img}
-                alt="mentor"
-                width={500}
-                height={600}
-                className="rounded-lg w-full h-[280px] object-cover"
-              />
+            <div className="bg-[#111827] rounded-xl p-3 shadow-lg transition-all">
+              <div className="relative w-full aspect-[3/4] overflow-hidden rounded-lg">
+                <Image
+                  src={m.img}
+                  alt={m.name}
+                  fill
+                  className="object-cover object-center"
+                />
+              </div>
+
               <p className="text-center text-white text-lg font-semibold mt-3">
                 {m.name}
               </p>

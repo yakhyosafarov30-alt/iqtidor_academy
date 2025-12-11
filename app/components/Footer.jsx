@@ -83,10 +83,10 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <p className="text-gray-300 text-[15px]">Sayt ishlab chiquvchi:</p>
             <Image
-              src="https://uic.academy/svg/uicgroup.svg"
+              src="https://iqtidoracademy.uz/images/footer-logo.svg"
               alt="Developer"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               className="opacity-80 hover:opacity-100 transition drop-shadow-[0_0_12px_rgba(59,175,255,0.6)]"
             />
           </div>

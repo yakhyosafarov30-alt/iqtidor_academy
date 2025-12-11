@@ -46,6 +46,10 @@ export default function CourseDefault() {
       name: "Backend",
       icon: "https://iqtidor.uicgroup.tech/media/courses//icons/2024/04/17/AdvencedFrontend.svg",
     },
+    {
+      name: "Sun'iy Intellekt",
+      icon: "https://iqtidor.uicgroup.tech/media/courses//icons/2024/04/17/AdvencedFrontend.svg",
+    },
   ];
 
   const [selected, setSelected] = useState(null);

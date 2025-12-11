@@ -645,6 +645,67 @@ export const courses = [
       "Yakuniy imtihon",
     ],
   },
+  {
+    id: 11,
+    title: "Sun'iy Intellekt",
+    image:
+      "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/17/3d.png",
+    image2:
+      "https://iqtidor.uicgroup.tech/media/course/images/2024/04/19/7_meeting_with_client.webp",
+    description:
+      "Kursda siz kompyuter bilan to‘liq ishlashni o‘rganasiz va undan tashqari ZOOM, Word, Excel, Point va Access dasturlarida ishlashni o‘rganasiz.",
+    whatYouWillLearn: [
+      {
+        title: "Windows ish muhiti",
+        icon: "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/19/desktop-computer.png",
+      },
+      {
+        title: "Word dasturi",
+        icon: "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/19/desktop-computer.png",
+      },
+      {
+        title: "Power Point dasturi",
+        icon: "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/19/desktop-computer.png",
+      },
+      {
+        title: "Excel dasturi",
+        icon: "https://iqtidor.uicgroup.tech/media/courses/icons/2024/04/19/desktop-computer.png",
+      },
+    ],
+    program: [
+      {
+        title: "Shaxsiy kompyuter tuzilishi",
+        details: [
+          "Windows ish muhiti bilan tanishish",
+          "Stamina va Solo da yozish mashqlari",
+          "Windows standart dasturlari",
+        ],
+      },
+      {
+        title: "Word dasturi",
+        details: ["Matn kiritish", "Sahifa sozlamalari"],
+      },
+      {
+        title: "Power Point dasturi",
+        details: ["Matn kiritish", "Sahifa sozlamalari"],
+      },
+      "Excel dasturin",
+      {
+        title: "Power Point dasturi",
+        details: ["Matn kiritish", "Sahifa sozlamalari"],
+      },
+      "Printer chop etish va skanerda ishlash asoslari",
+      "Klaviaturada Tezkor klavishlar bilan ishlash (Windows, MS Office)",
+      "Windows o‘rnatish bilan tanishish",
+      "Windowsga qo‘shimcha dastur va drayverlar o‘rnatish",
+      "Antivirus, arxivator dasturlar bilan ishlash",
+      "Tarmoqlar",
+      "Browserlarda ishlash va qidiruv tizimlari xizmatlari",
+      "Elektron pochta xizmatlari",
+      "Davlat xizmatlari tizimlaridan foydalanish",
+      "Yakuniy imtihon",
+    ],
+  },
 ];
 
 export default courses;
