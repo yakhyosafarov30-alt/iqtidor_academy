@@ -4,7 +4,7 @@ import Home from "./components/Home"
 import IqtidorTitle from "./components/IqtidorTitle"
 // import Services from "./components/Services.jsx";
 import Courses from "./components/Courses.jsx";
-// import Mentor from "./components/Mentor"
+import Mentor from "./components/Mentor"
 import CourseDefault from "./components/CourseDefault"
 import IqtidorLink from "./components/IqtidorLink"
 import Partner from "./components/Partner"
@@ -16,7 +16,7 @@ export default function page() {
       <Home/>
       <IqtidorTitle/>
       <Courses />
-      {/* <Mentor />  */}
+      <Mentor /> 
       <CourseDefault />
       <IqtidorLink />
       {/* <IqtidorSection /> */}
